@@ -1,0 +1,302 @@
+/* ==========================================================================
+   ARIVA LIVING — BESPOKE ARCHITECTURAL DESIGN SYSTEM & EDITORIAL MOTION
+   Identity: Warm Champagne Gold (#C5A880) on Deep Forest Olive Charcoal (#111614)
+   Location: Satellite, Ahmedabad, Gujarat, India
+   ========================================================================== */
+
+:root {
+  /* Brand Core Palette */
+  --color-brand-green: #1a211d;
+  --color-brand-green-deep: #0f1311;
+  --color-brand-green-surface: #151a17;
+  
+  --color-brand-gold: #c5a880;
+  --color-brand-gold-light: #e4d4c0;
+  --color-brand-gold-muted: #9e835f;
+  --color-brand-gold-dim: rgba(197, 168, 128, 0.18);
+
+  /* Architectural Materials & Neutral Atmosphere */
+  --color-warm-ivory: #faf8f5;
+  --color-ivory-surface: #f3efe6;
+  --color-stone: #d6cfbf;
+  --color-muted-olive: #5e6554;
+  --color-warm-taupe: #9e9281;
+  --color-charcoal: #181a18;
+  --color-deep-surface: #111412;
+
+  /* Text & Typography */
+  --color-text-dark: #191c19;
+  --color-text-muted: #62685f;
+  --color-text-light: #f7f5f0;
+  --color-text-dim: #949a8f;
+
+  /* Architectural Hairlines */
+  --hairline-gold: 1px solid rgba(197, 168, 128, 0.22);
+  --hairline-gold-subtle: 1px solid rgba(197, 168, 128, 0.12);
+  --hairline-dark: 1px solid rgba(26, 33, 29, 0.1);
+  --hairline-white: 1px solid rgba(255, 255, 255, 0.08);
+
+  /* Fonts */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Container */
+  --container-max: 1520px;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--color-brand-green-deep);
+  color: var(--color-text-light);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  line-height: 1.6;
+  font-size: 16px;
+  background-color: var(--color-brand-green-deep);
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-brand-gold);
+  color: var(--color-brand-green-deep);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: inherit;
+  line-height: 1.1;
+}
+
+p {
+  color: inherit;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.5rem, 5vw, 4.5rem);
+  padding-right: clamp(1.5rem, 5vw, 4.5rem);
+}
+
+/* Fluid Section Spacing */
+.section {
+  padding-top: clamp(5rem, 9vw, 10rem);
+  padding-bottom: clamp(5rem, 9vw, 10rem);
+  position: relative;
+}
+
+/* Architectural Eyebrow / Elevation Index */
+.arch-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--color-brand-gold);
+  margin-bottom: 1.5rem;
+}
+
+.arch-label::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background-color: currentColor;
+}
+
+.arch-label-dark {
+  color: var(--color-muted-olive);
+}
+
+/* Architectural Linear Action Buttons (No Pill Shapes) */
+.arch-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 1.1rem 2.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-brand-green-deep);
+  background: var(--color-brand-gold);
+  border: 1px solid var(--color-brand-gold);
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.arch-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.arch-btn:hover {
+  background: var(--color-brand-gold-light);
+  border-color: var(--color-brand-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -8px rgba(197, 168, 128, 0.3);
+}
+
+.arch-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 1.05rem 2.4rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  background: transparent;
+  border: 1px solid rgba(197, 168, 128, 0.45);
+  border-radius: 0;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.arch-btn-outline:hover {
+  background: rgba(197, 168, 128, 0.12);
+  border-color: var(--color-brand-gold);
+  color: var(--color-brand-gold-light);
+  transform: translateY(-2px);
+}
+
+.arch-btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 1.05rem 2.4rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-brand-green-deep);
+  background: transparent;
+  border: 1px solid var(--color-brand-green-deep);
+  border-radius: 0;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.arch-btn-dark:hover {
+  background: var(--color-brand-green-deep);
+  color: var(--color-warm-ivory);
+  transform: translateY(-2px);
+}
+
+/* Minimal Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-green-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(197, 168, 128, 0.4);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-gold);
+}
+
+/* Architectural Masking Reveals */
+.overflow-mask {
+  overflow: hidden;
+  display: block;
+}
+
+.reveal-element {
+  display: block;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-element.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Image Clip-Path Reveal */
+.img-reveal-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.img-reveal-wrapper img {
+  transform: scale(1.15);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.img-reveal-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* Focus styles */
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 1px solid var(--color-brand-gold);
+  outline-offset: 4px;
+}

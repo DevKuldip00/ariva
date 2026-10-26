@@ -1,0 +1,5 @@
+# Ariva Living - Robots.txt
+User-agent: *
+Allow: /
+
+Sitemap: https://arivaliving.com/sitemap.xml
